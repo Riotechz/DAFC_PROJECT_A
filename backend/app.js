@@ -10,9 +10,7 @@ let logger = require('morgan')
 
 dotenv.config({ path: '.env' })
 
-const sequelize = require('./config/dbConnection')
-
-const models = require('./model');
+const models = require('./models');
 
 const app = express();
 const httpServer = require('http').createServer(app)
