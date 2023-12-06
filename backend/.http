@@ -1,10 +1,15 @@
 ###
+GET http://localhost:5000
+
+
+###
 #Admin register
 POST http://localhost:5000/admin/auth/register HTTP/1.1
-
-content-Length: application/json
+Content-Type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "username": "huuuadc",
+    "password": "12345",
+    "email": "huuuadc@gmail.com",
+    "mobileNo": "0326473067"
 }

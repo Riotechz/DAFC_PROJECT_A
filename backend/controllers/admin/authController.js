@@ -61,6 +61,37 @@ const register = async (req, res) => {
     }
 }
 
+/**
+ * @description : send email or sms to user with OTP on forgot password
+ * @param {Object} req : request for forgotPassword
+ * @param {Object} res : response for forgotPassword
+ * @return {Object} : response for forgotPassword {status, message, data}
+ */
+const forgotPassword = async (req, res) => {
+    try {
+        const params = res.body;
+
+        if (!params.email) {
+            return res.badRequest();
+        }
+
+        let where = { email: params.email.toString().toLowerCase() };
+        let found = await dbService.findOne(models.user, where);
+
+        if (!found) {
+            return res.recordNotFound();
+        }
+
+
+    } catch (error) {
+        return res.internalServerError({ message: error.message });
+    }
+}
+
+const login = (req, res) => {
+
+}
+
 
 module.exports = {
     register,
