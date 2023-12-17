@@ -5,7 +5,7 @@
  */
 
 const express = require('express')
-// const cors = require('cors');
+const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv')
 let logger = require('morgan')
@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-// const corsOptions = { origin: process.env.ALLOW_ORIGIN, };
-// app.use(cors(corsOptions));
+const corsOptions = { origin: process.env.ALLOW_ORIGIN, };
+app.use(cors(corsOptions));
 app.use(logger('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -26,8 +26,6 @@ const register = async (req, res) => {
             userType: authConstant.USER_TYPES.Admin
         };
 
-        console.log(dataToRegister)
-
         let validateRequest = validation.validateParamsWithJoi(
             dataToRegister,
             userSchemaKey.schemaKey,
