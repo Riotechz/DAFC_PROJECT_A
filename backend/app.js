@@ -37,7 +37,6 @@ app.get('/', (req, res) => {
 });
 
 models.sequelize.sync({})
-    .then(() => { })
     .finally(() => {
         app.use(routes);
         httpServer.listen(process.env.PORT, () => {
