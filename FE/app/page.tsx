@@ -1,6 +1,3 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
 import Profile from './components/profile';
 import DafcInfo from './components/DafcInfo';
 
