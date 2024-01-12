@@ -46,8 +46,8 @@ const Profile = () => {
           </div>
           {tab === 0 && (
             <div className="tabs_panel">
-              <p><span>Mobile:</span> <span>+84909 817 336</span></p>
-              <p><span>Email:</span> <a href="mailto:jacquelinenguyen@imexpan.net">jacquelinenguyen@imexpan.net</a></p>
+              <p><span className='pr-3'>Mobile:</span> <span>+84909 817 336</span></p>
+              <p className='pt-[2px]'><span className='pr-6'>Email:</span> <span>jacquelinenguyen@imexpan.net</span></p>
             </div>
           )}
           {tab === 1 && (
@@ -60,7 +60,7 @@ const Profile = () => {
           {tab === 2 && (
             <div className="tabs_panel">
               <p><span className='mr-6'>Website:</span> www.dafc.com.vn</p>
-              <div className='flex items-center'>Follow us:
+              <div className='flex items-center pt-[2px]'>Follow us:
                 <div className='flex gap-4 ml-5'>
                     <a href="#"><Image src="/images/icon-facebook.png" alt='Facebook' width={20} height={20} /></a>
                     <a href="#"><Image src="/images/icon-instagram.png" alt='Instagram' width={20} height={20} /></a>
