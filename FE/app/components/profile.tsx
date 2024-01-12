@@ -46,8 +46,8 @@ const Profile = () => {
           </div>
           {tab === 0 && (
             <div className="tabs_panel">
-              <p><span>Mobile:</span> +84909 817 336</p>
-              <p><span>Email:</span> jacquelinenguyen@imexpan.net</p>
+              <p><span>Mobile:</span> <span>+84909 817 336</span></p>
+              <p><span>Email:</span> <a href="mailto:jacquelinenguyen@imexpan.net">jacquelinenguyen@imexpan.net</a></p>
             </div>
           )}
           {tab === 1 && (
