@@ -62,10 +62,10 @@ const Profile = () => {
               <p><span className='mr-6'>Website:</span> www.dafc.com.vn</p>
               <div className='flex items-center pt-[2px]'>Follow us:
                 <div className='flex gap-4 ml-5'>
-                    <a href="#"><Image src="/images/icon-facebook.png" alt='Facebook' width={20} height={20} /></a>
-                    <a href="#"><Image src="/images/icon-instagram.png" alt='Instagram' width={20} height={20} /></a>
-                    <a href="#"><Image src="/images/icon-zalo.png" alt='Zalo' width={20} height={20} /></a>
-                    <a href="#"><Image src="/images/icon-in.png" alt='Linkedin' width={20} height={20} /></a>
+                    <a href="https://www.facebook.com/DAFC.company" target='_blank'><Image src="/images/icon-facebook.png" alt='Facebook' width={20} height={20} /></a>
+                    <a href="https://www.instagram.com/dafc.vn/" target='_blank'><Image src="/images/icon-instagram.png" alt='Instagram' width={20} height={20} /></a>
+                    <a href="https://zalo.me/661854750494308935" target='_blank'><Image src="/images/icon-zalo.png" alt='Zalo' width={20} height={20} /></a>
+                    <a href="https://www.linkedin.com/company/dafcvietnam" target='_blank'><Image src="/images/icon-in.png" alt='Linkedin' width={20} height={20} /></a>
                 </div>
               </div>
             </div>
