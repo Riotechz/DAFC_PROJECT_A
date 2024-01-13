@@ -59,7 +59,7 @@ const Profile = () => {
           )}
           {tab === 2 && (
             <div className="tabs_panel">
-              <p><span className='mr-6'>Website:</span> www.dafc.com.vn</p>
+              <p><span className='mr-6'>Website:</span> <a href="https://www.dafc.com.vn" target='_blank'>www.dafc.com.vn</a></p>
               <div className='flex items-center pt-[2px]'>Follow us:
                 <div className='flex gap-4 ml-5'>
                     <a href="https://www.facebook.com/DAFC.company" target='_blank'><Image src="/images/icon-facebook.png" alt='Facebook' width={20} height={20} /></a>
