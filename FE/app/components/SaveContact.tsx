@@ -1,5 +1,12 @@
 'use client';
-const SaveContact = (props) => {
+type SaveContact = {
+    firstName: String,
+    lastName: String,
+    phone: String,
+    email: String,
+}
+
+const SaveContact = (props:SaveContact ) => {
     const firstName = props.firstName ? props.firstName : '';
     const lastName = props.lastName ? props.lastName : '';
     const phone = props.phone ? props.phone : '';
