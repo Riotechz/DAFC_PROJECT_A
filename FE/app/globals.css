@@ -7,16 +7,16 @@ body {
   @apply text-white bg-[#292929] font-main;
 }
 .profile {
-  @apply relative pb-[calc(690/393*100%)];
+  @apply relative;
 }
 .profile_picture {
-  @apply overflow-hidden absolute top-0 left-0 right-0 bottom-0;
+  @apply overflow-hidden relative pb-[100%];
 }
 .profile_picture > img {
-  @apply object-cover object-center w-full h-full;
+  @apply absolute top-0 left-0 right-0 bottom-0 object-cover object-center w-full h-full;
 }
 .profile_info {
-  @apply absolute left-0 bottom-0 right-0 z-10 pt-[35px] pb-4 px-4 bg-[linear-gradient(0deg,#292929_65%,rgba(6,6,8,0)_100%)]
+  @apply relative -mt-[70px] z-10 pt-[30px] pb-4 px-4 bg-[linear-gradient(0deg,#292929_65%,rgba(6,6,8,0)_100%)]
   min-h-[160px] flex flex-col gap-2 justify-end;
 }
 .profile_info .name {
@@ -35,16 +35,16 @@ body {
   @apply w-[21px] h-[21px] rounded-full bg-white text-black flex justify-center items-center text-[13px];
 }
 .tabs_panel {
-  @apply font-normal mb-5 leading-6 text-[14px] min-h-[100px];
+  @apply font-normal font-main mb-5 leading-6 text-[14px] min-h-[100px];
 }
 .save_contact .btn {
-  @apply border border-solid border-white flex justify-center items-center w-[176px] py-1 rounded-full cursor-pointer text-center;
+  @apply border border-solid font-main border-white flex justify-center items-center w-[176px] py-1 rounded-full cursor-pointer text-center;
 }
 .dafc_info {
-  @apply px-4 py-4;
+  @apply px-4 py-4 font-main;
 }
 .dafc_info .info img {
-  @apply flex justify-center mx-auto my-5 w-auto h-auto;
+  @apply flex justify-center mx-auto my-5 w-[127px] h-auto;
 }
 .dafc_info .info p {
   @apply font-normal text-[14px] leading-[1.6] text-justify;

@@ -12,10 +12,10 @@ const Profile = () => {
         <div className='profile'>
           <div className='profile_picture'>
             <Image 
-              src="/images/profile.jpg" 
+              src="/images/profile_2.jpg" 
               alt="Profile Picture" 
-              width={393} 
-              height={690}
+              width={600} 
+              height={600}
               />
           </div>
           <div className='profile_info'>
@@ -53,7 +53,7 @@ const Profile = () => {
           {tab === 1 && (
             <div className="tabs_panel">
               <p>Duy Anh Fashion and Cosmetic JSC</p>
-              <p>3rd floor, Centec tower, 72-74 Nguyen Thi Minh Khai, District 3, HCM City, Vietnam.</p>
+              <p><a  href='https://maps.app.goo.gl/RejN3baDcyNUycvX7' target='_blank'>3rd floor, Centec tower, 72-74 Nguyen Thi Minh Khai, District 3, HCM City, Vietnam.</a></p>
               <p><span>Tax code:</span> 0304130177</p>
             </div>
           )}
