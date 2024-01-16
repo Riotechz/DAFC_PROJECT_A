@@ -9,6 +9,7 @@ const authController = require('../../controllers/admin/authController');
 const { PLATFORM } = require('../../constants/authConstant');
 
 routes.route('/register').post(authController.register);
+routes.route('/login').post(authController.login);
 
 
 module.exports = routes;

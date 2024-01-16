@@ -8,6 +8,11 @@ const joi = require('joi');
 exports.schemaKey = joi.object({
     username: joi.string().min(3).max(30).required(),
     password: joi.string().min(3).max(30).required(),
+    passwordConfirm: joi.any()
+        .equal(joi.ref('password'))
+        .required()
+        .label('Confirm password')
+        .options({ messages: { 'any.only': '{{#label}} does not match' } }),
     email: joi.string().email().required(),
     fistName: joi.string().max(100).allow(null).allow(''),
     lastName: joi.string().max(100).allow(null).allow(''),

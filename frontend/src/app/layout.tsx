@@ -3,7 +3,6 @@ import { Flowbite, ThemeModeScript } from "flowbite-react";
 import { Inter } from "next/font/google";
 import { type FC, type PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
-import { dashboardTheme } from "./theme";
 
 export const metadata = {
     title: 'Admin dashboard',
@@ -19,7 +18,7 @@ const RootLayout: FC<PropsWithChildren> = function ({ children }) {
                 <ThemeModeScript />
             </head>
             <body className={twMerge("bg-gray-50 dark:bg-gray-900", inter.className)}>
-                <Flowbite theme={{ theme: dashboardTheme }}>{children}</Flowbite>
+                {children}
             </body>
         </html>
     );

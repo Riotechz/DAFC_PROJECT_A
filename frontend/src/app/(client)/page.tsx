@@ -1,5 +1,6 @@
+
 export default function HomePage() {
     return (
-        <div>heheh</div>
+        <h1>Trang chủ</h1>
     )
 };

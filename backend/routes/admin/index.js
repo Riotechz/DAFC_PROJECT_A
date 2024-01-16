@@ -6,6 +6,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/admin/auth', require('./auth'));
+router.use('/api/admin/auth', require('./auth'));
 
 module.exports = router;

@@ -10,6 +10,7 @@ const userSchemaKey = require('../../utils/validation/userValidation');
 const dbService = require('../../utils/dbService');
 const { uniqueValidation } = require('../../utils/common');
 const models = require('../../models');
+const authService = require('../../services/auth');
 
 
 /**
@@ -86,11 +87,35 @@ const forgotPassword = async (req, res) => {
     }
 }
 
-const login = (req, res) => {
-
+const login = async (req, res) => {
+    try {
+        let {
+            username, password
+        } = req.body;
+        if (username && password) {
+            let roleAccess = false;
+            if (req.body.includeRoleAccess) {
+                roleAccess = req.body.includeRoleAccess;
+            }
+            let result = await authService.loginUser(username, password, authConstant.PLATFORM.ADMIN, roleAccess);
+            if (result.flag) {
+                return res.badRequest({ message: result.data });
+            }
+            return res.success({
+                data: result.data,
+                message: 'Login successful.'
+            });
+        } else {
+            return res.badRequest();
+        }
+    } catch (error) {
+        return res.internalServerError({ message: error.message });
+    }
 }
 
 
 module.exports = {
     register,
+    forgotPassword,
+    login
 };
