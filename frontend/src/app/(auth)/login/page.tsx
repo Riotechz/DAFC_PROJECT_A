@@ -17,7 +17,7 @@ export default function LoginPage() {
     async function handleLoginSubmit(payload: LoginPayload) {
         try {
             await login(payload)
-            router.push('/')
+            router.push('/admin/dashboard')
         } catch (error) {
             console.log('failed to login', error)
         }

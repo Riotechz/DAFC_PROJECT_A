@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply text-white bg-[#292929] font-main;
+  }
+  .profile {
+    @apply relative;
+  }
+  .profile_picture {
+    @apply overflow-hidden relative pb-[100%];
+  }
+  .profile_picture > img {
+    @apply absolute top-0 left-0 right-0 bottom-0 object-cover object-center w-full h-full;
+  }
+  .profile_info {
+    @apply relative -mt-[70px] z-10 pt-[30px] pb-4 px-4 bg-[linear-gradient(0deg,#292929_65%,rgba(6,6,8,0)_100%)]
+    min-h-[160px] flex flex-col gap-2 justify-end;
+  }
+  .profile_info .name {
+    @apply text-white text-[32px] font-medium font-main leading-[1.3];
+  }
+  .profile_info .position {
+    @apply text-white text-[20px] font-normal font-main;
+  }
+  .profile_tabs {
+    @apply px-4;
+  }
+  .tabs_button {
+    @apply flex gap-6 mb-4;
+  }
+  .tabs_button button {
+    @apply w-[21px] h-[21px] rounded-full bg-white text-black flex justify-center items-center text-[13px];
+  }
+  .tabs_panel {
+    @apply font-normal font-main mb-5 leading-6 text-[14px] min-h-[100px];
+  }
+  .save_contact .btn {
+    @apply border border-solid font-main border-white flex justify-center items-center w-[176px] py-1 rounded-full cursor-pointer text-center;
+  }
+  .dafc_info {
+    @apply px-4 py-4 font-main;
+  }
+  .dafc_info .info img {
+    @apply flex justify-center mx-auto my-5 w-[127px] h-auto;
+  }
+  .dafc_info .info p {
+    @apply font-normal text-[14px] leading-[1.6] text-justify;
+  }
+  .dafc_brands {
+    @apply grid grid-cols-3 grid-rows-3 gap-4 pt-6 pb-5;
+  }
+  .dafc_brands .item {
+    @apply relative bg-white flex items-center justify-center overflow-hidden rounded-sm aspect-[106/70];
+  }
+  .dafc_brands .item img {
+    @apply w-auto h-auto max-w-[calc(100%-30px)] max-h-[50px];
+  }

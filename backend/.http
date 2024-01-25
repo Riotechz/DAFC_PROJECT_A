@@ -24,3 +24,8 @@ Content-Type: application/json
     "username": "huuuadc12",
     "password": "12345"
 }
+
+
+###
+#Client get profile
+GET http://localhost:5000/api/client/v1/user/share-profile/0326473067 HTTP/1.1

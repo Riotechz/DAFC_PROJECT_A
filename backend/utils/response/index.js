@@ -26,8 +26,8 @@ module.exports = {
     }),
 
     recordNotFound: (data = {}) => ({
-        status: responseStatus.recordNotFound,
-        message: data.message || 'Record(s) not found with specified criteria.',
+        status: responseStatus.failure,
+        message: data.message || responseStatus.recordNotFound,
         data: data.data || {},
     }),
 

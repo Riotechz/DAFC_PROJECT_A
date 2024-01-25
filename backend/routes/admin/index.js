@@ -7,5 +7,6 @@ const express = require('express');
 const router = express.Router();
 
 router.use('/api/admin/auth', require('./auth'));
+router.use('/api', require('./uploadRoutes'));
 
 module.exports = router;

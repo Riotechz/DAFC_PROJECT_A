@@ -19,12 +19,14 @@ let User = sequelize.define('user', {
     username: { type: DataTypes.STRING },
     password: { type: DataTypes.STRING },
     email: { type: DataTypes.STRING },
-    fistName: { type: DataTypes.STRING },
+    firstName: { type: DataTypes.STRING },
     lastName: { type: DataTypes.STRING },
     displayName: { type: DataTypes.STRING },
     mobileNo: { type: DataTypes.STRING },
     telNo: { type: DataTypes.STRING },
     faxNo: { type: DataTypes.STRING },
+    position: { type: DataTypes.STRING },
+    urlAvatar: { type: DataTypes.STRING },
     userType: {
         type: DataTypes.INTEGER,
         required: true
