@@ -5,7 +5,7 @@
 
 
 const authConstant = require('../../constants/authConstant');
-const validation = require('../../utils/validationRequest');
+const validation = require('../../utils/validateRequest');
 const userSchemaKey = require('../../utils/validation/userValidation');
 const dbService = require('../../utils/dbService');
 const { uniqueValidation } = require('../../utils/common');

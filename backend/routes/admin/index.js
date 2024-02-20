@@ -8,5 +8,6 @@ const router = express.Router();
 
 router.use('/api/admin/auth', require('./auth'));
 router.use('/api', require('./uploadRoutes'));
+router.use('/api', require('./userRoutes'));
 
 module.exports = router;

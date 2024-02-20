@@ -12,8 +12,16 @@ let logger = require('morgan')
 
 dotenv.config({ path: '.env' })
 
+const passport = require('passport');
+
+const { adminPassportStrategy } = require('./config/adminPassportStrategy');
+const { clientPassportStrategy } = require('./config/clientPassportStrategy');
+
 const models = require('./models');
 const routes = require('./routes')
+
+adminPassportStrategy(passport);
+clientPassportStrategy(passport);
 
 const app = express();
 app.use(require('./utils/response/responseHandler'));

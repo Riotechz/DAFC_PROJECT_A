@@ -7,7 +7,7 @@
 const { Op } = require('sequelize')
 const User = require("../../models/user");
 const userSchemaKey = require("../../utils/validation/userValidation");
-const validation = require("../../utils/validationRequest");
+const validation = require("../../utils/validateRequest");
 const dbService = require("../../utils/dbService");
 const auth = require("../../services/auth");
 const models = require("../../models");

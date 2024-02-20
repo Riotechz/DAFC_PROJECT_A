@@ -1,0 +1,15 @@
+###
+#Admin login
+POST http://localhost:3000/api/admin/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "huuuadc123@gmail.com",
+    "password": "123456"
+}
+
+###
+#Admin get me
+GET http://localhost:3000/api/admin/user/me HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwidXNlcm5hbWUiOiJodXV1YWRjMTIiLCJpYXQiOjE3MDY3NzIyMDMsImV4cCI6MTcxMjc3MjIwM30.FnpCS1Tp9iHc4aI00ch0anOqXxb8qK6lBxexQLW-KHY

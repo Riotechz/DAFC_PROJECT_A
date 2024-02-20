@@ -4,13 +4,13 @@
  */
 
 const { Op } = require('sequelize');
-const User = require('../../model/user');
+const User = require('../../models/user');
 const userSchemaKey = require('../../utils/validation/userValidation');
 const validation = require('../../utils/validateRequest');
 const dbService = require('../../utils/dbService');
 const auth = require('../../services/auth');
-const models = require('../../model');
-const deleteDependentService = require('../../utils/deleteDependent');
+const models = require('../../models');
+// const deleteDependentService = require('../../utils/deleteDependent');
 const fileUpload = require('../admin/fileUploadController');
 
 /**
@@ -513,15 +513,15 @@ module.exports = {
   addUser,
   findAllUser,
   getUserCount,
-  softDeleteManyUser,
+  // softDeleteManyUser,
   bulkInsertUser,
   bulkUpdateUser,
-  deleteManyUser,
-  softDeleteUser,
+  // deleteManyUser,
+  // softDeleteUser,
   partialUpdateUser,
   updateUser,
   getUser,
-  deleteUser,
+  // deleteUser,
   changePassword,
   updateProfile,
   getLoggedInUserInfo,
