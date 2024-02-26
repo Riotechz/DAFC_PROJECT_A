@@ -9,7 +9,7 @@ if (process.env.NODE_ENV == 'production') {
         USER: process.env.DATABASE_USERNAME,
         PASSWORD: process.env.DATABASE_PASSWORD,
         DB: process.env.DATABASE_NAME,
-        dialect: 'mssql',
+        dialect: 'mysql',
         port: process.env.DB_PORT,
     };
 } else if (process.env.NODE_ENV == 'uat') {

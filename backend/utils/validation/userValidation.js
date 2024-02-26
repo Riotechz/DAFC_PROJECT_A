@@ -14,8 +14,10 @@ exports.schemaKey = joi.object({
         .label('Confirm password')
         .options({ messages: { 'any.only': '{{#label}} does not match' } }),
     email: joi.string().email().required(),
-    fistName: joi.string().max(100).allow(null).allow(''),
+    firstName: joi.string().max(100).allow(null).allow(''),
     lastName: joi.string().max(100).allow(null).allow(''),
+    urlAvatar: joi.string().allow(null).allow(''),
+    position: joi.string().allow(null).allow(''),
     dislayName: joi.string().max(100).allow(null).allow(''),
     mobileNo: joi.string().allow(null).allow(''),
     telNo: joi.string().allow(null).allow(''),

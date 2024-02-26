@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 export const montserrat = Montserrat({
-    weight: ['300', '400', '500', '700'],
+    weight: ['300', '400', '500', '600', '700', '800', '900'],
     subsets: ['latin'],
     display: 'swap',
     fallback: ['Arial', 'sans-serif'],
@@ -23,6 +23,8 @@ export const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: montserrat.style.fontFamily,
+        allVariants: {
+            fontFamily: montserrat.style.fontFamily
+        },
     },
 });

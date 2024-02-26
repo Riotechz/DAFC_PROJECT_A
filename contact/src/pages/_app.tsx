@@ -1,5 +1,7 @@
-import { theme } from '@/utils';
-import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
+import { EmptyLayout } from '@/layouts'
+import { createEmotionCache, theme } from '@/utils';
+import { AppPropsWithLayout } from '@/models'
+import { CacheProvider } from '@emotion/react'
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppProps } from 'next/app';
@@ -10,10 +12,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { SWRConfig } from 'swr'
 import axiosClient from '@/api-client/axios-client'
 
-export default function MyApp(props: AppProps) {
-    const { Component, pageProps } = props;
+const clientSideEmotionCache = createEmotionCache()
+
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+    const Layout = Component.Layout ?? EmptyLayout
     return (
-        <AppCacheProvider {...props}>
+        <CacheProvider value={clientSideEmotionCache}>
             <Head>
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
             </Head>
@@ -22,9 +27,11 @@ export default function MyApp(props: AppProps) {
                 <CssBaseline />
                 <ToastContainer />
                 <SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: false }}>
-                    <Component {...pageProps} />
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
                 </SWRConfig>
             </ThemeProvider>
-        </AppCacheProvider>
+        </CacheProvider>
     );
 }

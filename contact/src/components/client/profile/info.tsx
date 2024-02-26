@@ -9,12 +9,17 @@ const Profile = ({ ...props }) => {
     const [tab, setTab] = useState(0);
     const op = 'opacity-[0.4]';
     const cssd = 'w-[21px] h-[21px] rounded-full bg-white text-black flex justify-center items-center text-[13px]'
+    let phoneNumber = props.mobileNo ?? '';
+    if (props.mobileNo.charAt(0) === '0') {
+        phoneNumber = props.mobileNo.substring(1)
+    }
+
     return (
         <>
             <div className='relative'>
                 <div className='overflow-hidden relative pb-[100%]'>
                     <Image className='absolute top-0 left-0 right-0 bottom-0 object-cover object-center w-full h-full'
-                        src={props?.imageUrl || 'https://dafcsignature.web.app/images/profile_2.jpg'}
+                        src={props?.imageUrl || 'https://www.dafc.com.vn/wp-content/uploads/2023/04/DAFC-Logo_Gold-color.jpg'}
                         alt="Profile Picture"
                         width={600}
                         height={600}
@@ -49,8 +54,8 @@ const Profile = ({ ...props }) => {
                 </div>
                 {tab === 0 && (
                     <div className="font-normal font-main mb-5 leading-6 text-[14px] min-h-[100px]">
-                        <p><span className='pr-3'>Mobile:</span> <span>{'+' + props.mobileNo}</span></p>
-                        <p className='pt-[2px]'><span className='pr-6'>Email:</span> <span>{props.email}</span></p>
+                        <p><span className='pr-3'>Mobile:</span> <span>{'+84' + phoneNumber}</span></p>
+                        <p className='pt-[2px]'><span className='pr-6'>Email:</span> <span>{props.email ?? ' jacquelinenguyen@imexpan.net'}</span></p>
                     </div>
                 )}
                 {tab === 1 && (
@@ -66,7 +71,7 @@ const Profile = ({ ...props }) => {
                         <div className='flex items-center pt-[2px]'>Follow us:
                             <div className='flex gap-4 ml-5'>
                                 <a href="https://www.facebook.com/DAFC.company" target='_blank'><Image src="https://dafcsignature.web.app/images/icon-facebook.png" alt='Facebook' width={20} height={20} /></a>
-                                <a href="https://www.instagram.com/dafc.vn/" target='_blank'><Image src="https://dafcsignature.web.app/images/icon-instagram.png" alt='Instagram' width={20} height={20} /></a>
+                                <a href="https://www.instagram.com/dafc_vietnam" target='_blank'><Image src="https://dafcsignature.web.app/images/icon-instagram.png" alt='Instagram' width={20} height={20} /></a>
                                 <a href="https://zalo.me/661854750494308935" target='_blank'><Image src="https://dafcsignature.web.app/images/icon-zalo.png" alt='Zalo' width={20} height={20} /></a>
                                 <a href="https://www.linkedin.com/company/dafcvietnam" target='_blank'><Image src="https://dafcsignature.web.app/images/icon-in.png" alt='Linkedin' width={20} height={20} /></a>
                             </div>
@@ -74,7 +79,7 @@ const Profile = ({ ...props }) => {
                     </div>
                 )}
             </div>
-            <SaveContact firstName={props.firstName} lastName={props.firstName} phone={props.mobileNo} email={props.email} />
+            <SaveContact {...props} />
         </>
     )
 }
