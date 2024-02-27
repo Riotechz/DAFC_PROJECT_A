@@ -12,10 +12,16 @@ type SaveContact = {
 const imageUrlToBase64 = async (url: string) => {
     const response = await fetch(url);
     const blob = await response.blob();
-    return new Promise((onSuccess, onError) => {
+    return new Promise<string>((onSuccess, onError) => {
         try {
             const reader = new FileReader();
-            reader.onload = function () { onSuccess(this.result) };
+            reader.onload = function () {
+                if (typeof (this.result) === 'string') {
+                    onSuccess(this.result)
+                } else {
+                    onSuccess('')
+                }
+            };
             reader.readAsDataURL(blob);
         } catch (e) {
             onError(e);
@@ -32,7 +38,9 @@ const SaveContact = ({ ...props }) => {
 
     const handleAddToContacts = async () => {
 
-        const photo = await imageUrlToBase64('http://172.29.100.12:5000/images/profiles/thnam.jpg');
+        const photoBase64 = (await imageUrlToBase64('http://172.29.100.12:5000/images/profiles/thnam.jpg'))
+            .replace('data:image/jpeg;base64,', '');
+        console.log(photoBase64)
 
         const contactInfo = {
             firstName,
@@ -42,15 +50,16 @@ const SaveContact = ({ ...props }) => {
         };
 
         const contactURL = `data:text/vcard;charset=utf-8,`
-            + `BEGIN:VCARD%0AVERSION:3.0
-            %0AFN:${contactInfo.firstName} ${contactInfo.lastName}
+            + `BEGIN:VCARD%0AVERSION:3.0%0AFN:${contactInfo.firstName} ${contactInfo.lastName}
             %0ATEL:${contactInfo.phone}
-            %0APHOTO%0ATYPE=JPEG%0AVALUE=URI:http://172.29.100.12:5000/images/profiles/thnam.jpg
             %0AEMAIL:${contactInfo.email}
             %0AEND:VCARD`;
 
         window.open(contactURL);
+
     };
+
+
 
     return (
         <div className="flex justify-center p-1.5">

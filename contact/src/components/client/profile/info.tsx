@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FaUser, FaBriefcase, FaGlobe } from 'react-icons/fa';
 import SaveContact from './SaveContact';
 import { UserShareProfile } from '@/models/user';
+import ImageDefault from '../../../../public/assets/DAFC-Logo_Gold-color.jpg'
 
 const Profile = ({ ...props }) => {
     const [tab, setTab] = useState(0);
@@ -19,16 +20,23 @@ const Profile = ({ ...props }) => {
             <div className='relative'>
                 <div className='overflow-hidden relative pb-[100%]'>
                     <Image className='absolute top-0 left-0 right-0 bottom-0 object-cover object-center w-full h-full'
-                        src={props?.imageUrl || 'https://www.dafc.com.vn/wp-content/uploads/2023/04/DAFC-Logo_Gold-color.jpg'}
+                        src={props?.imageUrl || ImageDefault}
                         alt="Profile Picture"
                         width={600}
                         height={600}
                     />
                 </div>
-                <div className='relative -mt-[70px] z-10 pt-[30px] pb-4 px-4 bg-[linear-gradient(0deg,#292929_65%,rgba(6,6,8,0)_100%)]
-    min-h-[160px] flex flex-col gap-2 justify-end'>
-                    <h1 className='text-white text-[32px] font-medium font-main leading-[1.3]'>{props.firstName || 'Jacqueline'} <br />{props.lastName || 'Tiên Nguyễn'}</h1>
-                    <h3 className='text-white text-[20px] font-normal font-main'>{props.position || 'Chief Executive Officer at DAFC'}</h3>
+                <div className='relative -mt-[70px] z-10 pt-[30px] pb-4 px-4 
+                bg-[linear-gradient(0deg,#292929_65%,rgba(6,6,8,0)_100%)]
+                min-h-[160px] flex flex-col gap-2 justify-end'>
+                    <h1 className='text-white text-[32px] font-medium font-main leading-[1.3]'>
+                        {props.firstName || 'undefined'}
+                        <br />
+                        {props.lastName || 'undefined'}
+                    </h1>
+                    <h3 className='text-white text-[20px] font-normal font-main'>
+                        {props.position || 'undefined'}
+                    </h3>
                 </div>
             </div>
             <div className="px-4">

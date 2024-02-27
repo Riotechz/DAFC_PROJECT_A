@@ -4,7 +4,6 @@ import { ClientLayout } from "@/layouts";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import useSWR from 'swr'
-import { useEffect } from "react";
 
 const ProfilePage: NextPage = ({ ...props }) => {
 
