@@ -5,13 +5,13 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import useSWR from 'swr'
 
-const ProfilePage: NextPage = ({ ...props }) => {
+const ProfilePage: NextPage = () => {
 
 
     const router = useRouter()
     const userNick = router.query.userId
 
-    const { data, error, isLoading } = useSWR(userNick ? ('/client/v1/user/share-profile/' + userNick) : null)
+    const { data, error, isLoading } = useSWR(userNick ? ('https://dafc-cms.styleoutlet.vn/api/client/v1/user/share-profile/' + userNick) : null)
 
     if (error) {
         router.push('/')

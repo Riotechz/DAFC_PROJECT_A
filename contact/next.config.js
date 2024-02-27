@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['dafcsignature.web.app', 'localhost', 'www.dafc.com.vn', '172.29.100.12'],
+    domains: ['dafcsignature.web.app', 'localhost', 'www.dafc.com.vn', 'dafc-cms.styleoutlet.vn'],
   },
   compiler: {
     // ssr and displayName are configured by default

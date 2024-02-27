@@ -38,10 +38,6 @@ const SaveContact = ({ ...props }) => {
 
     const handleAddToContacts = async () => {
 
-        const photoBase64 = (await imageUrlToBase64('http://172.29.100.12:5000/images/profiles/thnam.jpg'))
-            .replace('data:image/jpeg;base64,', '');
-        console.log(photoBase64)
-
         const contactInfo = {
             firstName,
             lastName,

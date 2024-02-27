@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline />
                 <ToastContainer />
-                <SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: false }}>
+                <SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: true }}>
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>
