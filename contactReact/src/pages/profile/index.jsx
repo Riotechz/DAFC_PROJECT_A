@@ -14,6 +14,8 @@ const ProfilePage = () => {
             const rep = await response.json();
             if (response.ok) {
                 setData(rep)
+            }else{
+                window.location.replace(DAFC_URL);
             }
         } catch (error) {
             console.log(error)
@@ -25,7 +27,6 @@ const ProfilePage = () => {
     }, [])
 
     if (!data) {
-        window.location.replace(DAFC_URL);
         return
     }
 

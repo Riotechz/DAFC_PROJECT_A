@@ -14,7 +14,7 @@ Content-Type: application/json
     "urlAvatar":"/images/profiles/nthang.jpg",
     "position":"Business Development Director",
     "email": "hang.nguyenthuy@dafc.com.vn",
-    "mobileNo": "0904435769",
+    "mobileNo": "0912349559",
     "password": "123456",
     "passwordConfirm": "123456"
 }
@@ -54,15 +54,19 @@ Content-Type: application/json
 
 {
     "username": "huu.tran",
-    "password": "123456",
+    "firstName":"Huu",
+    "lastName":"Tran Chi",
+    "urlAvatar":"",
+    "position":"IT Project Developer Super Visor",
     "email": "huu.tran@dafc.com.vn",
     "mobileNo": "0326473067",
-    "passwordConfirm": "123456"
+    "password": "123456!@#",
+    "passwordConfirm": "123456!@#"
 }
 
 ###
 #Client get profile
-GET http://dafc-cms.styleoutlet.vn/api/client/v1/user/share-profile/0326473067 HTTP/1.1
+GET https://dafc-cms.styleoutlet.vn/api/client/v1/user/share-profile/hang.nguyenthuy HTTP/1.1
 
 ###
 #Client get profile

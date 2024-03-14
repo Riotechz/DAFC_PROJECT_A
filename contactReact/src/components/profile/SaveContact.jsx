@@ -1,13 +1,16 @@
 import { imageUrlToBase64 } from "../../utils"
 import { API_URL } from "../../configs";
 
-const SaveContact = ({ ...props }) => {
+const SaveContact = ({ cellPhone , ...props }) => {
 
     const contactInfo = {
         firstName: props.firstName ?? 'FDemo',
         lastName: props.lastName ?? 'LDemo',
-        phone: props.mobileNo ?? '0912345678',
+        phone: cellPhone ?? '0912345678',
         email: props.email ?? 'demo@dafc.com.vn',
+        position: props.position ?? 'IT',
+        nickname: props.nickname ?? '',
+        suffix: props.suffix ?? '',
     };
 
     const handleAddToContacts = async () => {
@@ -17,10 +20,20 @@ const SaveContact = ({ ...props }) => {
         const fullName = contactInfo.firstName + ' ' + contactInfo.lastName
 
         let VCF_CONTENT = 'BEGIN:VCARD\nVERSION:3.0';
-        VCF_CONTENT += '\nN:' + fullName;
-        VCF_CONTENT += '\nTEL:' + contactInfo.phone;
-        VCF_CONTENT += '\nEMAIL:' + contactInfo.email;
+        VCF_CONTENT += '\nFN;CHARSET=UTF-8:' + fullName;
+        VCF_CONTENT += '\nN;CHARSET=UTF-8:;' + contactInfo.lastName + ';'+contactInfo.firstName+';'+contactInfo.suffix+';';
+        VCF_CONTENT += '\nNICKNAME;CHARSET=UTF-8:'+ contactInfo.nickname;
+        VCF_CONTENT += '\nTEL;TYPE=CELL:+84' + contactInfo.phone;
+        VCF_CONTENT += '\nTEL;TYPE=HOME,VOICE:+84' + contactInfo.phone;
+        VCF_CONTENT += '\nTEL;TYPE=WORK,VOICE:+8419002666';
+        VCF_CONTENT += '\nTEL;TYPE=WORK,FAX:0304130177';
+        VCF_CONTENT += '\nEMAIL;CHARSET=UTF-8;type=HOME,INTERNET:' + contactInfo.email;
         VCF_CONTENT += '\nPHOTO;TYPE=JPEG;ENCODING=b:' + avatarBase64;
+        VCF_CONTENT += '\nORG;CHARSET=UTF-8:Duy Anh Fashion and Cosmetic JSC';
+        VCF_CONTENT += '\nLABEL;CHARSET=UTF-8;TYPE=WORK:3rd floor, Centec tower';
+        VCF_CONTENT += '\nADR;CHARSET=UTF-8;TYPE=WORK:;;72-74 Nguyen Thi Minh Khai;HCM City;District 3;;Vietnam';
+        VCF_CONTENT += '\nURL;type=WORK;CHARSET=UTF-8:https://www.dafc.com.vn';
+        VCF_CONTENT += '\nTITLE;CHARSET=UTF-8:'+contactInfo.position;
         VCF_CONTENT += '\nEND:VCARD';
 
         const link = document.createElement('a');

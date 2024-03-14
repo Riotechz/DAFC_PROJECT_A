@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { FaUser, FaBriefcase, FaGlobe } from 'react-icons/fa';
+import { FaUser, FaBriefcase, FaGlobe, FaPhone, FaEnvelope } from 'react-icons/fa';
 import SaveContact from './SaveContact';
 import { API_URL } from '../../configs';
+import { Link } from "react-router-dom";
 
 const Profile = ({ ...props }) => {
     const [tab, setTab] = useState(0);
@@ -59,8 +60,23 @@ const Profile = ({ ...props }) => {
                 </div>
                 {tab === 0 && (
                     <div className="font-normal font-main mb-5 leading-6 text-[14px] min-h-[100px]">
-                        <p><span className='pr-3'>Mobile:</span> <span>{'+84' + phoneNumber}</span></p>
-                        <p className='pt-[2px]'><span className='pr-6'>Email:</span> <span>{props.email ?? ' jacquelinenguyen@imexpan.net'}</span></p>
+                        <p>
+                            <span className='pr-3 inline-flex items-baseline'>Mobile:</span> 
+                            <span>
+                                <Link  className='inline-flex flex-grow items-center' to={`tel:+84${phoneNumber}`}>
+                                    {'+84' + phoneNumber} 
+                                    <FaPhone className='ml-2'/>
+                                </Link>
+                            </span>    
+                        </p>
+                        <p><span className='pr-6 inline-flex items-baseline'>Email:</span> 
+                            <span>
+                                <Link className='inline-flex flex-grow items-center' to={`mailto:${props.email}`}>
+                                    {props.email ?? ' jacquelinenguyen@imexpan.net'} 
+                                    <FaEnvelope className='ml-2'/>
+                                </Link>
+                            </span>
+                            </p>
                     </div>
                 )}
                 {tab === 1 && (
@@ -84,7 +100,7 @@ const Profile = ({ ...props }) => {
                     </div>
                 )}
             </div>
-            <SaveContact {...props} />
+            <SaveContact cellPhone={phoneNumber} {...props} />
         </>
     )
 }
