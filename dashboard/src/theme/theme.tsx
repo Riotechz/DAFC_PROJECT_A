@@ -9,7 +9,7 @@ const theme = {
 
 // color design tokens export
 export const tokens = (mode: String) => ({
-    ...(mode === "light"
+    ...(mode === "dark"
       ? {
           grey: {
             100: "#e0e0e0",

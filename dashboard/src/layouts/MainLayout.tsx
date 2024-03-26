@@ -1,14 +1,21 @@
 import React, { PropsWithChildren } from 'react'
 import Topbar from '../components/global/Topbar'
+import { SidebarProvider } from '../components/global/sidebar/Sidebar'
+import { Box } from '@mui/material'
 
 function MainLayout({children}: PropsWithChildren) {
   return (
-    <div style={{ height: "100%", width: "100%" }}>
-        <main>
-            <Topbar/>
+    <SidebarProvider>
+    <Box 
+      height={"100%"}
+      width={"100%"}
+    >
+      <main>
+            <Topbar isAuth/>
             {children}
-        </main>
-    </div>
+      </main>
+    </Box>
+    </SidebarProvider>
   )
 }
 

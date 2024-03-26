@@ -1,9 +1,20 @@
 import React from 'react'
+import BlankLayout from '../../layouts/BlankLayout'
+import { LoginForm } from '../../components/auth'
+import { LoginPayload } from '../../models'
+import  { redirect } from 'react-router-dom'
 
-function loginPage() {
+function LoginPage() {
+
+  const handleLogin = (payload: LoginPayload) =>{
+      
+  }
+
   return (
-    <div>loginPage</div>
+    <BlankLayout>
+      <LoginForm onSubmit={handleLogin}/>
+    </BlankLayout>
   )
 }
 
-export default loginPage
+export default LoginPage
