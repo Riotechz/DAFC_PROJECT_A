@@ -1,10 +1,10 @@
 import MainLayout from '../../layouts/MainLayout';
 
-function PageDashboard() {
+function DashboardPage() {
     return (
         <MainLayout>
         </MainLayout>
     );
 }
 
-export default PageDashboard
+export default DashboardPage

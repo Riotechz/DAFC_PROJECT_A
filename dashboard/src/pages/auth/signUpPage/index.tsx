@@ -1,5 +1,5 @@
 import React from 'react'
-import BlankLayout from '../../layouts/BlankLayout'
+import BlankLayout from '../../../layouts/BlankLayout'
 import { Box, Container, Avatar } from '@mui/material'
 import Typography from '@mui/material/Typography';
 

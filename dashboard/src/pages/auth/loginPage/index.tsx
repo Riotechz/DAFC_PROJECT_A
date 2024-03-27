@@ -1,8 +1,7 @@
 import React from 'react'
-import BlankLayout from '../../layouts/BlankLayout'
-import { LoginForm } from '../../components/auth'
-import { LoginPayload } from '../../models'
-import  { redirect } from 'react-router-dom'
+import BlankLayout from '../../../layouts/BlankLayout'
+import { LoginForm } from '../../../components/auth'
+import { LoginPayload } from '../../../models'
 
 function LoginPage() {
 
