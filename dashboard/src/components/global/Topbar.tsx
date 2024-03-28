@@ -7,6 +7,9 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { tokens } from "../../theme/theme";
 import { useThemeContext } from '../../theme/ThemeContextProvider';
+import LoginOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import useAuth from "../../hooks/useAuth";
+import { Logout } from "../../contexts/auth/reducers";
 type TopbarType = {
   isAuth: boolean
 }
@@ -14,6 +17,12 @@ const Topbar = ({isAuth}: TopbarType) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const { toggleColorMode } = useThemeContext();
+
+  const {dispatch} = useAuth()
+ 
+  const handleLogout = () =>{
+    dispatch(Logout())
+  }
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -50,6 +59,9 @@ const Topbar = ({isAuth}: TopbarType) => {
             </IconButton>
             <IconButton>
               <PersonOutlinedIcon />
+            </IconButton>
+            <IconButton onClick={handleLogout}>
+              <LoginOutlinedIcon />
             </IconButton>
           </>
         )}

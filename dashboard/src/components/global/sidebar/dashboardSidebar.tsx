@@ -24,6 +24,32 @@ type PropItem = {
   setSelected: (title:string)=> void,
 }
 
+const dataSideBar = [
+  {
+    id: 1,
+    parentId:0,
+    lable: 'User manage',
+    sub: [
+      {
+        id: 2,
+        parentId: 1,
+        label: 'List'
+      },
+      {
+        id: 3,
+        parentId: 1,
+        label: 'Depatment'
+      },
+      {
+        id: 4,
+        parentId: 1,
+        label: 'Position'
+      },
+    ]
+  }
+]
+
+
 const Item = ({ title, to, icon, selected, setSelected }: PropItem) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

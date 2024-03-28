@@ -1,30 +1,28 @@
-import { useState, useEffect } from 'react';
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { BASE_URL_API } from '../configs';
+import axios from "axios";
+import { BASE_URL_API } from "../configs";
 
-axios.defaults.baseURL = BASE_URL_API;
+export const accessToken = localStorage.getItem("ACCESS_TOKEN")
 
-const useAxios = (axiosParams: AxiosRequestConfig) => {
-    const [response, setResponse] = useState<AxiosResponse>();
-    const [error, setError] = useState<AxiosError|unknown>();
-    const [loading, setLoading] = useState(true);
+axios.interceptors.request.use((config)=>{
+return config
+},function(error){
+  return Promise.reject(error)
+})
 
-    const fetchData = async (params: AxiosRequestConfig) => {
-        try {
-          const result = await axios.request(params);
-          setResponse(result);
-        } catch( err ) {
-          setError(err);
-        } finally {
-          setLoading(false);
-        }
-     };
+axios.interceptors.response.use((response)=>{
+  return response
+}, function (error){
+  return Promise.reject(error)
+})
 
-    useEffect(() => {
-        fetchData(axiosParams);
-    },[]);
+const axiosClient = axios.create({
+  baseURL: BASE_URL_API,
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${accessToken}`
+  }
+})
 
-    return { response, error, loading };
-};
 
-export default useAxios;
+
+export default axiosClient;

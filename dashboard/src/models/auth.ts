@@ -17,7 +17,7 @@ export interface LoginPayload {
     password: string
 }
 
-export interface UserProfile {
+export interface User {
     id: number
     username: string
     email: string

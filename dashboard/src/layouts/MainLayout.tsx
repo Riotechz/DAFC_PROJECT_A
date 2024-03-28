@@ -11,7 +11,7 @@ function MainLayout({children}: PropsWithChildren) {
       width={"100%"}
     >
       <main>
-            <Topbar isAuth/>
+            <Topbar isAuth={true}/>
             {children}
       </main>
     </Box>

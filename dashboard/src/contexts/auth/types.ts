@@ -1,5 +1,7 @@
+import { User } from "../../models"
+
 export interface AuthState {
     isAuthenticated?: boolean
     isInitialized?: boolean
-    user: any
+    user: User | null
 }
